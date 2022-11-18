@@ -92,11 +92,11 @@ const todoList = () => {
     }*/
   const toDisplayableList = (list) => {
     return list
-      .map((td) => {
-        display_status = td.completed ? "[x]" : "[ ]";
-        display_date = td.dueDate == today ? "" : td.dueDate;
+      .map((ob) => {
+        disp_status = ob.completed ? "[x]" : "[ ]";
+        disp_date = ob.dueDate == today ? "" : ob.dueDate;
 
-        return `${display_status} ${td.title} ${display_date}`;
+        return `${disp_status} ${ob.title} ${display_date}`;
       })
       .join("\n");
   };

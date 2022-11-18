@@ -34,35 +34,33 @@ let today = new Date().toLocaleDateString("en-CA");
 
 const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 
-describe("Todo list getting Tested", () => {
+describe("Todolist Test Suite", () => {
   beforeAll(() => {
     add({
-      title: "DAA algorithums",
+      title: "Test todo",
       completed: false,
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
   });
 
-  test("Adding new todo in the list", () => {
-    // expect(all.length).toBe(0);
-    let length = all.length;
+  test("Should add new todo", () => {
+    const todoItemsCount = all.length;
 
     add({
       title: "node js process of learning",
       completed: false,
       dueDate: new Date().toLocaleDateString("en-CA"),
     });
-
-    expect(all.length).toBe(length + 1);
+    expect(all.length).toBe(todoItemsCount + 1);
   });
 
-  test("Marking todo as completed", () => {
+  test("Mark todo as completed", () => {
     expect(all[0].completed).toBe(false);
     markAsComplete(0);
     expect(all[0].completed).toBe(true);
   });
 
-  test("retrieving all todos that are overdue", () => {
+  test("overdue todos ", () => {
     let listOfTodos = overdue();
 
     expect(
@@ -72,7 +70,7 @@ describe("Todo list getting Tested", () => {
     ).toBe(true);
   });
 
-  test("retrieving all todos that are dueToday", () => {
+  test("dueToday todos ", () => {
     let listOfTodos = dueToday();
 
     expect(
@@ -82,7 +80,7 @@ describe("Todo list getting Tested", () => {
     ).toBe(true);
   });
 
-  test("retrieving all todos that are dueLater", () => {
+  test("dueLater todos", () => {
     let listOfTodos = dueLater();
 
     expect(
