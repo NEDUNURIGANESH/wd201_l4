@@ -1,0 +1,19 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "author": "Jane Doe <jane.doe@example.com>",
+  "license": "ISC",
+  "dependencies": {
+    "husk": "^0.5.3"
+  },
+  "devDependencies": {
+    "husky": "^8.0.2",
+    "jest": "^29.3.1"
+  }
+}
